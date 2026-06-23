@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#0f0c29">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>">
+  <title>简易决策器</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <!-- ========== 首页 ========== -->
+  <section id="page-home" class="page active">
+    <div class="page-inner">
+      <header class="page-header">
+        <h1 class="app-title">简易决策器</h1>
+        <p class="app-subtitle">选择困难？交给运气 ✨</p>
+      </header>
+
+      <div class="card-grid">
+        <a href="#coin" class="glass-card" data-nav>
+          <div class="card-icon">🪙</div>
+          <div class="card-label">掷硬币</div>
+          <div class="card-desc">二选一，交给天命</div>
+        </a>
+
+        <a href="#dice" class="glass-card" data-nav>
+          <div class="card-icon">🎲</div>
+          <div class="card-label">摇骰子</div>
+          <div class="card-desc">1~6 的随机数</div>
+        </a>
+
+        <a href="#wheel" class="glass-card" data-nav>
+          <div class="card-icon">🎡</div>
+          <div class="card-label">转盘</div>
+          <div class="card-desc">多选项抽选</div>
+        </a>
+      </div>
+
+      <footer class="page-footer">
+        <p>轻点卡片，开始决定</p>
+      </footer>
+    </div>
+  </section>
+
+  <!-- ========== 掷硬币 ========== -->
+  <section id="page-coin" class="page">
+    <div class="page-inner">
+      <header class="page-header">
+        <a href="#home" class="back-btn" data-nav>‹ 返回</a>
+        <h2 class="page-title">掷硬币</h2>
+      </header>
+
+      <div class="dice-selector">
+        <span class="selector-label">硬币数量</span>
+        <div class="selector-group" id="coin-count-selector">
+          <button class="selector-btn active" data-count="1">1</button>
+          <button class="selector-btn" data-count="2">2</button>
+          <button class="selector-btn" data-count="3">3</button>
+        </div>
+      </div>
+
+      <div class="coin-area" id="coin-area">
+        <div class="coin-wrapper" data-index="0">
+          <div class="coin-container">
+            <div class="coin" id="coin-0">
+              <div class="coin-edge" style="transform: translateZ(-5px)"></div>
+              <div class="coin-edge" style="transform: translateZ(-3px)"></div>
+              <div class="coin-edge" style="transform: translateZ(-1px)"></div>
+              <div class="coin-edge" style="transform: translateZ(1px)"></div>
+              <div class="coin-edge" style="transform: translateZ(3px)"></div>
+              <div class="coin-edge" style="transform: translateZ(5px)"></div>
+              <div class="coin-face coin-front">
+                <span class="coin-symbol">🪙</span>
+              </div>
+              <div class="coin-face coin-back">
+                <span class="coin-symbol">🌙</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="coin-wrapper hidden" data-index="1">
+          <div class="coin-container">
+            <div class="coin" id="coin-1">
+              <div class="coin-edge" style="transform: translateZ(-5px)"></div>
+              <div class="coin-edge" style="transform: translateZ(-3px)"></div>
+              <div class="coin-edge" style="transform: translateZ(-1px)"></div>
+              <div class="coin-edge" style="transform: translateZ(1px)"></div>
+              <div class="coin-edge" style="transform: translateZ(3px)"></div>
+              <div class="coin-edge" style="transform: translateZ(5px)"></div>
+              <div class="coin-face coin-front">
+                <span class="coin-symbol">🪙</span>
+              </div>
+              <div class="coin-face coin-back">
+                <span class="coin-symbol">🌙</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="coin-wrapper hidden" data-index="2">
+          <div class="coin-container">
+            <div class="coin" id="coin-2">
+              <div class="coin-edge" style="transform: translateZ(-5px)"></div>
+              <div class="coin-edge" style="transform: translateZ(-3px)"></div>
+              <div class="coin-edge" style="transform: translateZ(-1px)"></div>
+              <div class="coin-edge" style="transform: translateZ(1px)"></div>
+              <div class="coin-edge" style="transform: translateZ(3px)"></div>
+              <div class="coin-edge" style="transform: translateZ(5px)"></div>
+              <div class="coin-face coin-front">
+                <span class="coin-symbol">🪙</span>
+              </div>
+              <div class="coin-face coin-back">
+                <span class="coin-symbol">🌙</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="coin-prompt" id="coin-prompt">轻触硬币，开始翻转</p>
+
+      <div class="coin-result" id="coin-result">
+        <span class="result-badge" id="coin-result-text"></span>
+      </div>
+
+      <button class="action-btn" id="coin-flip-btn">掷硬币</button>
+    </div>
+  </section>
+
+  <!-- ========== 摇骰子 ========== -->
+  <section id="page-dice" class="page">
+    <div class="page-inner">
+      <header class="page-header">
+        <a href="#home" class="back-btn" data-nav>‹ 返回</a>
+        <h2 class="page-title">摇骰子</h2>
+      </header>
+
+      <div class="dice-selector">
+        <span class="selector-label">骰子数量</span>
+        <div class="selector-group" id="dice-count-selector">
+          <button class="selector-btn active" data-count="1">1</button>
+          <button class="selector-btn" data-count="2">2</button>
+          <button class="selector-btn" data-count="3">3</button>
+        </div>
+      </div>
+
+      <div class="dice-area" id="dice-area">
+        <div class="dice-wrapper" data-index="0">
+          <div class="dice" id="dice-0">
+            <div class="dice-face" data-face="1"><span>⚀</span></div>
+            <div class="dice-face" data-face="2"><span>⚁</span></div>
+            <div class="dice-face" data-face="3"><span>⚂</span></div>
+            <div class="dice-face" data-face="4"><span>⚃</span></div>
+            <div class="dice-face" data-face="5"><span>⚄</span></div>
+            <div class="dice-face" data-face="6"><span>⚅</span></div>
+          </div>
+        </div>
+        <div class="dice-wrapper hidden" data-index="1">
+          <div class="dice" id="dice-1">
+            <div class="dice-face" data-face="1"><span>⚀</span></div>
+            <div class="dice-face" data-face="2"><span>⚁</span></div>
+            <div class="dice-face" data-face="3"><span>⚂</span></div>
+            <div class="dice-face" data-face="4"><span>⚃</span></div>
+            <div class="dice-face" data-face="5"><span>⚄</span></div>
+            <div class="dice-face" data-face="6"><span>⚅</span></div>
+          </div>
+        </div>
+        <div class="dice-wrapper hidden" data-index="2">
+          <div class="dice" id="dice-2">
+            <div class="dice-face" data-face="1"><span>⚀</span></div>
+            <div class="dice-face" data-face="2"><span>⚁</span></div>
+            <div class="dice-face" data-face="3"><span>⚂</span></div>
+            <div class="dice-face" data-face="4"><span>⚃</span></div>
+            <div class="dice-face" data-face="5"><span>⚄</span></div>
+            <div class="dice-face" data-face="6"><span>⚅</span></div>
+          </div>
+        </div>
+      </div>
+
+      <p class="coin-prompt" id="dice-prompt">轻触骰子，开始投掷</p>
+
+      <div class="coin-result" id="dice-result">
+        <span class="result-badge" id="dice-result-text"></span>
+      </div>
+
+      <button class="action-btn" id="dice-roll-btn">摇骰子</button>
+    </div>
+  </section>
+
+  <!-- ========== 转盘 ========== -->
+  <section id="page-wheel" class="page">
+    <div class="page-inner">
+      <header class="page-header">
+        <a href="#home" class="back-btn" data-nav>‹ 返回</a>
+        <h2 class="page-title">转盘</h2>
+      </header>
+
+      <div class="wheel-editor" id="wheel-editor">
+        <div class="editor-header">
+          <span class="selector-label">选项列表</span>
+          <button class="tiny-btn" id="wheel-add-option">+ 添加</button>
+        </div>
+        <div class="option-list" id="option-list">
+          <!-- options rendered by JS -->
+        </div>
+        <p class="option-hint" id="option-hint">至少需要 2 个选项</p>
+      </div>
+
+      <div class="wheel-wrapper">
+        <div class="wheel-pointer">▼</div>
+        <canvas id="wheel-canvas" width="300" height="300"></canvas>
+      </div>
+
+      <div class="coin-result" id="wheel-result">
+        <span class="result-badge" id="wheel-result-text"></span>
+      </div>
+
+      <button class="action-btn" id="wheel-spin-btn">转起来！</button>
+    </div>
+  </section>
+
+  <!-- ========== 结果弹窗 ========== -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-icon" id="modal-icon">✨</div>
+      <div class="modal-title" id="modal-title">结果</div>
+      <div class="modal-body" id="modal-body"></div>
+      <button class="action-btn modal-btn" id="modal-close">知道了</button>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+  <script src="js/coin.js"></script>
+  <script src="js/dice.js"></script>
+  <script src="js/wheel.js"></script>
+</body>
+</html>

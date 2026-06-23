@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#302b63"/>
+      <stop offset="100%" stop-color="#0f0c29"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f857a6"/>
+      <stop offset="100%" stop-color="#ff5858"/>
+    </linearGradient>
+  </defs>
+  <circle cx="50" cy="50" r="48" fill="url(#bg)" stroke="url(#ring)" stroke-width="3"/>
+  <circle cx="50" cy="50" r="38" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+  <circle cx="50" cy="50" r="28" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+  <!-- 指针 -->
+  <polygon points="50,6 46,18 54,18" fill="#ff5858"/>
+  <!-- 扇形装饰 -->
+  <path d="M50,50 L50,12 A38,38 0 0,1 84,30 Z" fill="rgba(248,87,166,0.25)"/>
+  <path d="M50,50 L84,30 A38,38 0 0,1 72,76 Z" fill="rgba(255,88,88,0.15)"/>
+  <!-- 中心点 -->
+  <circle cx="50" cy="50" r="6" fill="url(#ring)"/>
+  <circle cx="50" cy="50" r="3" fill="#fff"/>
+</svg>

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#302b63"/>
+      <stop offset="100%" stop-color="#0f0c29"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f857a6"/>
+      <stop offset="100%" stop-color="#ff5858"/>
+    </linearGradient>
+  </defs>
+  <circle cx="256" cy="256" r="248" fill="url(#bg)" stroke="url(#ring)" stroke-width="16"/>
+  <circle cx="256" cy="256" r="200" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="6"/>
+  <circle cx="256" cy="256" r="146" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="4"/>
+  <!-- 转盘指针 -->
+  <polygon points="256,20 236,90 276,90" fill="#ff5858"/>
+  <!-- 扇形装饰 -->
+  <path d="M256,256 L256,56 A200,200 0 0,1 428,156 Z" fill="rgba(248,87,166,0.25)"/>
+  <path d="M256,256 L428,156 A200,200 0 0,1 382,394 Z" fill="rgba(255,88,88,0.15)"/>
+  <path d="M256,256 L382,394 A200,200 0 0,1 130,394 Z" fill="rgba(248,87,166,0.10)"/>
+  <path d="M256,256 L130,394 A200,200 0 0,1 84,156 Z" fill="rgba(255,88,88,0.08)"/>
+  <!-- 中心装饰 -->
+  <circle cx="256" cy="256" r="36" fill="url(#ring)"/>
+  <circle cx="256" cy="256" r="16" fill="#fff"/>
+  <!-- 外圈刻度 -->
+  <g stroke="rgba(255,255,255,0.08)" stroke-width="3">
+    <line x1="256" y1="14" x2="256" y2="30"/>
+    <line x1="256" y1="498" x2="256" y2="482"/>
+    <line x1="14" y1="256" x2="30" y2="256"/>
+    <line x1="498" y1="256" x2="482" y2="256"/>
+  </g>
+</svg>
